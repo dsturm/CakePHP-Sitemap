@@ -4,60 +4,60 @@ App::uses('PagesIterator', 'Sitemap.Vendor/Iterators');
 
 class SitemapsController extends SitemapAppController {
 
-	/**
-	 * helpers - array of helpers
-	 *
-	 * @var array
-	 */
+/**
+ * helpers - array of helpers
+ *
+ * @var array
+ */
 	public $helpers = array(
 		'Time',
 		'Html',
 		'Cache',
 	);
 
-	/**
-	 * components - array of components
-	 *
-	 * @var array
-	 */
+/**
+ * components - array of components
+ *
+ * @var array
+ */
 	public $components = array(
 		'RequestHandler',
 		'Auth',
 	);
 
-	/**
-	 * cacheAction - view cache timing
-	 *
-	 * @var array
-	 */
+/**
+ * cacheAction - view cache timing
+ *
+ * @var array
+ */
 	public $cacheAction = array(
     'display' => 43200,
 	);
 
-	/**
-	 * beforeFilter - beforeFilter callback
-	 *
-	 * @return void
-	 */
+/**
+ * beforeFilter - beforeFilter callback
+ *
+ * @return void
+ */
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow(array('display'));
 	}
 
-	/**
-	 * beforeRender - beforeRender callback
-	 *
-	 * @return [type] [description]
-	 */
+/**
+ * beforeRender - beforeRender callback
+ *
+ * @return [type] [description]
+ */
 	public function beforeRender() {
 		parent::beforeRender();
 	}
 
-	/**
-	 * display - display the sitemap
-	 *
-	 * @return [type] [description]
-	 */
+/**
+ * display - display the sitemap
+ *
+ * @return void
+ */
 	public function display() {
 		$sitemapData = array();
 
