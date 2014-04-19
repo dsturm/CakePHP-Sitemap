@@ -13,7 +13,6 @@ class SitemapsControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'plugin.sitemap.sitemap'
 	);
 
 /**
